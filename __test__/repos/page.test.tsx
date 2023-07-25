@@ -1,13 +1,11 @@
-import {cleanup, fireEvent, getAllByRole, getByRole, render, screen} from '@testing-library/react'
-import {afterEach, describe, expect, it} from 'vitest'
+import { cleanup, getAllByRole, getByRole, render, screen } from '@testing-library/react'
+import { afterEach, describe, expect, it } from 'vitest'
 import React from 'react'
 import ReposPage from '../../app/repos/page'
 
-describe('Home page', () => {
+describe('ReposPage', () => {
   afterEach(cleanup)
-  it('should render correctly;', () => {
-    render(<ReposPage />)
-  })
+  it('should render correctly;', () => render(<ReposPage />))
   it('should display main title as h1;', () => {
     render(<ReposPage />)
     const h1 = screen.getByRole('heading', { level: 1 })
@@ -16,7 +14,7 @@ describe('Home page', () => {
   it('should display a description;', () => {
     render(<ReposPage />)
     const p = screen.getByRole('paragraph')
-    expect(p.innerText).toBe('Here you\'ll find my training as web developer and other projects.')
+    expect(p.innerText).toBe('Here, you\'ll find my training as web developer and other projects.')
   })
   it('should render a main section;', () => {
     render(<ReposPage />)
