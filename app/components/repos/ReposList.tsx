@@ -4,10 +4,9 @@ const ENDPOINT = 'https://api.github.com/users/lftdev/repos'
 const getRepos = async (): Promise<Repository[]> => await (await fetch(ENDPOINT)).json()
 
 export default async function ReposList (): Promise<JSX.Element> {
-  const reposData = getRepos()
-  const [repos] = await Promise.all([reposData])
+  const [repos] = await Promise.all([getRepos()])
   return (
-    <ul>
+    <ul className='grid place-items-center gap-5'>
       {repos.map((repo, index) => {
         return (
           <li key={index}>

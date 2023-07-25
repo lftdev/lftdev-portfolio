@@ -11,7 +11,9 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
         <header className='p-3'>
           <h3 className='text-2xl font-bold'>lucastorres</h3>
         </header>
-        {children}
+        <div className='p-5'>
+          {children}
+        </div>
       </body>
     </html>
   )
