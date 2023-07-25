@@ -1,4 +1,4 @@
-import RepoPreview from '@components/repos/RepoPreview'
+import ReposList from '@components/repos/ReposList'
 
 export default function ReposPage (): JSX.Element {
   return (
@@ -7,6 +7,7 @@ export default function ReposPage (): JSX.Element {
       <p role='paragraph'>Here, you'll find my training as web developer and other projects.</p>
       <main>
         <h2>Web projects</h2>
+        <ReposList />
       </main>
     </>
   )
