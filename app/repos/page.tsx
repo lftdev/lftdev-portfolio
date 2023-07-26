@@ -1,4 +1,4 @@
-import ReposList from '@components/repos/ReposList'
+import ReposList from '@/components/repos/ReposList'
 
 export default function ReposPage (): JSX.Element {
   return (

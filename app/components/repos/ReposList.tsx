@@ -1,7 +1,10 @@
-import Repository from '@classes/Repository'
+import { Octokit } from '@octokit/core'
+import Repository from '@/classes/Repository'
 import RepoPreview from './RepoPreview'
-const ENDPOINT = 'https://api.github.com/users/lftdev/repos'
-const getRepos = async (): Promise<Repository[]> => await (await fetch(ENDPOINT)).json()
+import { AUTH } from '@/app/auth/octokit-auth'
+
+const getRepos = async (): Promise<Repository[]> =>
+  (await new Octokit(AUTH).request('GET /users/lftdev/repos')).data
 
 export default async function ReposList (): Promise<JSX.Element> {
   const [repos] = await Promise.all([getRepos()])
@@ -10,7 +13,7 @@ export default async function ReposList (): Promise<JSX.Element> {
       {repos.map((repo, index) => {
         return (
           <li key={index}>
-            <RepoPreview title={repo.name} description={repo.description} />
+            <RepoPreview repository={repo} />
           </li>
         )
       })}

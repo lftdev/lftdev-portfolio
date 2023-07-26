@@ -7,7 +7,7 @@ export default function HomePage (): JSX.Element {
       <div className='grid gap-2'>
         <h2 className='text-3xl text-pink-500'>Nice to meet you!</h2>
         <h1 className='text-4xl'>
-          My name is<span className='font-bold text-purple-600'> Lucas </span>and I'm Frontend Developer.
+          My name is <span className='font-bold text-purple-600'>Lucas</span> and I'm Frontend Developer.
         </h1>
       </div>
       <div className='grid place-items-center h-56'>
