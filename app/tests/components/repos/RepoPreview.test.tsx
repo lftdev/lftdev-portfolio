@@ -1,7 +1,7 @@
 import { cleanup, getAllByRole, getByRole, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
 import React from 'react'
-import RepoPreview from '../../../app/components/repos/RepoPreview'
+import RepoPreview from '../../../components/repos/RepoPreview'
 
 describe('RepoPreview', () => {
   afterEach(cleanup)
