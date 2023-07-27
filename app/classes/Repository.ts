@@ -1,12 +1,14 @@
 export default class Repository {
   name = ''
   description = ''
-  html_url = ''
+  htmlUrl = ''
   thumbnail = ''
+  ghPages = ''
   constructor (name: string, description: string, htmlUrl: string) {
     this.name = name
     this.description = description
-    this.html_url = htmlUrl
+    this.htmlUrl = htmlUrl
     this.thumbnail = `https://raw.githubusercontent.com/lftdev/${name}/main/screenshots/desktop-view.png`
+    this.ghPages = `https://lftdev.github.io/${name}`
   }
 }

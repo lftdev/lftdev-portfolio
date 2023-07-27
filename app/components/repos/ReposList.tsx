@@ -7,7 +7,7 @@ const octokit = new Octokit(AUTH)
 
 const getRepositories = async (): Promise<Repository[]> => {
   const res = (await octokit.request('GET /users/lftdev/repos')).data
-  return res.map((rep: Repository) => new Repository(rep.name, rep.description, rep.html_url))
+  return res.map((rep: { name: string, description: string, html_url: string }) => new Repository(rep.name, rep.description, rep.html_url))
 }
 
 export default async function ReposList (): Promise<JSX.Element> {

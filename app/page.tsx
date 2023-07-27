@@ -1,5 +1,4 @@
 import Link from 'next/link'
-
 export default function HomePage (): JSX.Element {
   // Redundant role used for paragraph element was included as it was not being detected by tests.
   return (
