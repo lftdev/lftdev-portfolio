@@ -3,14 +3,18 @@ import Repository from '@/classes/Repository'
 import RepoPreview from './RepoPreview'
 import { AUTH } from '@/app/auth/octokit-auth'
 
-const getRepos = async (): Promise<Repository[]> =>
-  (await new Octokit(AUTH).request('GET /users/lftdev/repos')).data
+const octokit = new Octokit(AUTH)
+
+const getRepositories = async (): Promise<Repository[]> => {
+  const res = (await octokit.request('GET /users/lftdev/repos')).data
+  return res.map((rep: Repository) => new Repository(rep.name, rep.description, rep.html_url))
+}
 
 export default async function ReposList (): Promise<JSX.Element> {
-  const [repos] = await Promise.all([getRepos()])
+  const repositories = await getRepositories()
   return (
     <ul className='grid place-items-center gap-5'>
-      {repos.map((repo, index) => {
+      {repositories.map((repo, index) => {
         return (
           <li key={index}>
             <RepoPreview repository={repo} />
