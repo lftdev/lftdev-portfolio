@@ -5,5 +5,5 @@ export default function RepoThumb (props: { thumbnail: string }): JSX.Element {
   const { thumbnail } = props
   const [noImgError, setNoImgError] = useState(false)
 
-  return <Image onError={() => setNoImgError(true)} src={noImgError ? '/images/repo-default-view.svg' : thumbnail} width={150} height={150} alt='Project live site thumbnail' />
+  return <Image onError={() => setNoImgError(true)} src={noImgError ? '/images/repo-default-view.svg' : thumbnail} width={500} height={150} objectFit='cover' alt='Project live site thumbnail' />
 }
