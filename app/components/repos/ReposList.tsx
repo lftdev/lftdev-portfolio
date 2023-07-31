@@ -1,9 +1,9 @@
 import { Octokit } from '@octokit/core'
 import Repository from '@/classes/Repository'
 import RepoPreview from './RepoPreview'
-import { AUTH } from '@/app/auth/octokit-auth'
+import 'dotenv/config'
 
-const octokit = new Octokit(AUTH)
+const octokit = new Octokit({ auth: process.env.AUTH_TOKEN })
 
 const getRepositories = async (): Promise<Repository[]> => {
   const res = (await octokit.request('GET /users/lftdev/repos')).data
