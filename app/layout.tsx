@@ -8,6 +8,7 @@ export const metadata = {
 
 export default function RootLayout ({ children }: { children: React.ReactNode }): JSX.Element {
   const hoverHighlight = 'hover:text-purple-600'
+  const warning = 'This portfolio is currently under development. Some features may be limited.'
   return (
     <html lang='en'>
       <body>
@@ -38,6 +39,11 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
           </nav>
         </header>
         {children}
+        <footer>
+          <p className='text-center font-bold'>
+            {warning}
+          </p>
+        </footer>
       </body>
     </html>
   )
