@@ -18,6 +18,7 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
               <h3 className='text-2xl font-bold'>lucastorres</h3>
             </Link>
           </span>
+          <p>Under development</p>
           <nav>
             <ul className='flex gap-4'>
               <li className=''>
