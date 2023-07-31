@@ -15,8 +15,6 @@ This is my most ambitious project. It will reflect all my advancements as web de
 
 ### Description
 
-Users should be able to:
-
 In general words, for the moment it will be fetching my GitHub repositories through [GitHub REST API](https://docs.github.com/en/rest), giving access to each one source code and for some of them, their live website preview.
 
 ### Links
