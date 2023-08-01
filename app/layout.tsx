@@ -12,13 +12,13 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
   return (
     <html lang='en'>
       <body>
-        <header className='fixed top-0 flex justify-between items-center w-full p-5 bg-[rgba(0,0,0,.8)]'>
+        <header className='fixed top-0 flex justify-around items-center w-full p-5 bg-[rgba(0,0,0,.8)]'>
           <span>
             <Link href='/'>
               <h3 className='text-2xl font-bold'>lucastorres</h3>
             </Link>
           </span>
-          <p>Under development</p>
+          <p className='absolute px-10 bg-purple-600 font-bold top-5 -left-12 -rotate-45'>DEV PHASE</p>
           <nav>
             <ul className='flex gap-4'>
               <li className=''>
