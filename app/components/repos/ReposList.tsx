@@ -1,14 +1,5 @@
-import { Octokit } from '@octokit/core'
-import Repository from '@/classes/Repository'
+import { getRepositories } from '@/app/services/repo-fetching'
 import RepoPreview from './RepoPreview'
-import 'dotenv/config'
-
-const octokit = new Octokit({ auth: process.env.AUTH_TOKEN })
-
-const getRepositories = async (): Promise<Repository[]> => {
-  const res = (await octokit.request('GET /users/lftdev/repos')).data
-  return res.map((rep: { name: string, description: string, html_url: string }) => new Repository(rep.name, rep.description, rep.html_url))
-}
 
 export default async function ReposList (): Promise<JSX.Element> {
   const repositories = await getRepositories()
