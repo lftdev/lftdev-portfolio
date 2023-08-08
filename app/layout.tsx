@@ -13,7 +13,7 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
   return (
     <html lang='en'>
       <body>
-        <header className='fixed top-0 flex justify-around items-center w-full p-5 bg-[rgba(0,0,0,.8)]'>
+        <header className='fixed top-0 flex justify-around items-center w-full p-5 bg-[rgba(0,0,0,.8)] z-50'>
           <span>
             <Link href='/'>
               <Heading level={4} className='font-bold'>
@@ -21,7 +21,9 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
               </Heading>
             </Link>
           </span>
-          <p className='absolute px-10 bg-purple-600 font-bold top-5 -left-12 -rotate-45'>DEV PHASE</p>
+          <span className='absolute px-10 bg-purple-600 font-bold top-5 -left-12 -rotate-45'>
+            DEV PHASE
+          </span>
           <nav>
             <ul className='flex gap-4'>
               <li className=''>
