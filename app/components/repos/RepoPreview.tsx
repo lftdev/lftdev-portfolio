@@ -2,27 +2,18 @@ import Link from 'next/link'
 import Repository from '@/classes/Repository'
 import RepoThumbnail from './RepoThumbnail'
 import { CODE_ICON, WINDOW_ICON } from '../svg-icons'
-// TODO: add tabs on each article showing used languages
-// TODO: make round deploy and code buttons
 export default function RepoPreview (props: { repository: Repository }): JSX.Element {
   const { repository } = props
+  /* group-hover:transform group-hover:translate-y-1/2 */
   return (
-    <article className='w-80 text-left break-words bg-slate-950 rounded-lg overflow-hidden'>
+    <article className='group w-full h-44 rounded-lg border border-gray-700 overflow-hidden hover:scale-105 transition-all duration-150'>
       <RepoThumbnail thumbnail={repository.thumbnail} />
-      <footer>
-        <Link href={repository.htmlUrl} target='_blank'>
-          <h3 className='text-2xl'>
-            {repository.name}
-          </h3>
-        </Link>
-        <p>{repository.description}</p>
-        <div className='flex justify-between'>
-          <Link href={repository.ghPages} target='_blank' className='min-w-[100px] p-5 rounded-md bg-purple-500 font-bold text-center'>
-            DEPLOY
+      <footer className='relative bottom-1/2'>
+        <div className='flex justify-between px-2'>
+          <Link title='Deploy' href={repository.ghPages} target='_blank' className='p-5 rounded-full bg-purple-500'>
             {WINDOW_ICON}
           </Link>
-          <Link href={repository.htmlUrl} target='_blank' className='min-w-[100px] p-5 rounded-md bg-gray-800 font-bold text-center'>
-            CODE
+          <Link title='View code' href={repository.htmlUrl} target='_blank' className='p-5 rounded-full bg-gray-800'>
             {CODE_ICON}
           </Link>
         </div>

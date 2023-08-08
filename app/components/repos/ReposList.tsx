@@ -12,20 +12,14 @@ export default async function ReposList (props: Props): Promise<JSX.Element> {
   const filtered = filter(repositories)
   return (
     <>
-      <div className='text-left'>
-        <Heading level={4} className='text-pink-500 font-bold'>
+      <div className='text-left mb-10'>
+        <Heading level={6}>
           {title}
         </Heading>
       </div>
-      <ul className='grid place-items-center gap-5'>
-        {filtered.map((repo, index) => {
-          return (
-            <li key={index}>
-              <RepoPreview repository={repo} />
-            </li>
-          )
-        })}
-      </ul>
+      <div className='grid place-items-center gap-5 sm:grid-cols-2 lg:grid-cols-3'>
+        {filtered.map((repo, index) => <RepoPreview key={index} repository={repo} />)}
+      </div>
     </>
   )
 }

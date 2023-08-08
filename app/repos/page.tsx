@@ -1,7 +1,7 @@
+import Heading from '@/components/html-customs/Heading'
 import ReposList from '@/components/repos/ReposList'
 import { getRepositories } from '../services/repo-fetching'
 import { PROFESSIONAL_PROJECTS } from '../constants/repos-filters'
-import Heading from '../components/html-customs/Heading'
 
 export default function ReposPage (): JSX.Element {
   const repositories = getRepositories()
