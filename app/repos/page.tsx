@@ -2,6 +2,7 @@ import Heading from '@/components/html-customs/Heading'
 import ReposList from '@/components/repos/ReposList'
 import { getRepositories } from '../services/repo-fetching'
 import { PROFESSIONAL_PROJECTS, PYTHON_PROJECTS } from '../constants/repos-filters'
+import { BRIEFCASE_ICON, DUMBBELL_ICON, PYTHON_ICON } from '../components/svg-icons'
 
 export default function ReposPage (): JSX.Element {
   const repositories = getRepositories()
@@ -13,24 +14,30 @@ export default function ReposPage (): JSX.Element {
         </Heading>
         <p role='paragraph'>Here, you'll find my training as <span className='font-bold'>web developer</span> and other works I consider my <span className='font-bold'>hobby projects</span>.</p>
       </div>
-      <Heading level={2} className='text-purple-600'>
+      <Heading level={2} className='text-pink-500'>
         Web Development Projects
       </Heading>
       <main>
-        <ReposList title='Professional works' list={repositories} filter={list => list.filter(repo => PROFESSIONAL_PROJECTS.includes(repo.name))} />
+        <ReposList
+          icon={BRIEFCASE_ICON}
+          title='Professional works'
+          list={repositories} filter={list => list.filter(repo => PROFESSIONAL_PROJECTS.includes(repo.name))}
+        />
       </main>
       <section>
         <ReposList
+          icon={DUMBBELL_ICON}
           title='Training projects' list={repositories}
           filter={list => list.filter(repo => !PROFESSIONAL_PROJECTS.includes(repo.name) &&
           !PYTHON_PROJECTS.includes(repo.name))}
         />
       </section>
-      <Heading level={2} className='text-purple-600'>
+      <Heading level={2} className='text-pink-500'>
         Hobby projects
       </Heading>
       <section>
         <ReposList
+          icon={PYTHON_ICON}
           title='Python projects' list={repositories}
           filter={list => list.filter(repo =>
             PYTHON_PROJECTS.includes(repo.name))}

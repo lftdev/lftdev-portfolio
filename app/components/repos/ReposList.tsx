@@ -2,17 +2,19 @@ import Heading from '../html-customs/Heading'
 import RepoPreview from './RepoPreview'
 import Repository from '@/app/classes/Repository'
 interface Props {
+  icon: React.ReactNode
   list: Promise<Repository[]>
   title: string
   filter: (list: Repository[]) => Repository[]
 }
 export default async function ReposList (props: Props): Promise<JSX.Element> {
-  const { list, title, filter } = props
+  const { icon, list, title, filter } = props
   const [repositories] = await Promise.all([list])
   const filtered = filter(repositories)
   return (
     <>
-      <div className='text-left mb-10'>
+      <div className='flex items-center gap-2 text-left mb-10'>
+        <span className='fill-white'>{icon}</span>
         <Heading level={6}>
           {title}
         </Heading>
