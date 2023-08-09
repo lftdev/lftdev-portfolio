@@ -9,7 +9,7 @@ export default function RepoPreview (props: { repository: Repository }): JSX.Ele
       <RepoThumbnail alt={repository.name + ' thumbnail'} thumbnail={repository.thumbnail} />
       <footer className='relative bottom-1/2 lg:bottom-72 lg:group-hover:bottom-1/2 transition-all duration-150'>
         <div className='flex justify-between px-2'>
-          <Link title='Deploy' href={repository.ghPages} target='_blank' className='p-5 rounded-full bg-purple-500'>
+          <Link title='Deploy' href={repository.deploy} target='_blank' className='p-5 rounded-full bg-purple-500'>
             {WINDOW_ICON}
           </Link>
           <Link title='View code' href={repository.htmlUrl} target='_blank' className='p-5 rounded-full bg-gray-800'>

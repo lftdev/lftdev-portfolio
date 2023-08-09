@@ -1,14 +1,16 @@
 export default class Repository {
+  [key: string]: string
   name = ''
   description = ''
   htmlUrl = ''
+  root = '/main'
   thumbnail = ''
-  ghPages = ''
+  deploy = ''
   constructor (name: string, description: string, htmlUrl: string) {
     this.name = name
     this.description = description
     this.htmlUrl = htmlUrl
-    this.thumbnail = `https://raw.githubusercontent.com/lftdev/${name}/main/screenshots/desktop-view.png`
-    this.ghPages = `https://lftdev.github.io/${name}`
+    this.thumbnail = `https://raw.githubusercontent.com/lftdev/${name}${this.root}/screenshots/desktop-view.png`
+    this.deploy = `https://lftdev.github.io/${name}`
   }
 }

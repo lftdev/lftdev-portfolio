@@ -28,7 +28,7 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
             <ul className='flex gap-4'>
               <li className=''>
                 <Link className={hoverHighlight} href='https://github.com/lftdev' target='_blank'>
-                  {GITHUB_ICON()}
+                  {GITHUB_ICON('GitHub account')}
                 </Link>
               </li>
               <li>
