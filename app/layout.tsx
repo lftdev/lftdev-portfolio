@@ -21,8 +21,8 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
               </Heading>
             </Link>
           </span>
-          <span className='absolute px-10 bg-purple-600 font-bold top-5 -left-12 -rotate-45'>
-            DEV PHASE
+          <span className='absolute flex justify-center items-center px-10 bg-purple-600 font-bold top-3 -left-10 -rotate-45'>
+            DEMO
           </span>
           <nav>
             <ul className='flex gap-4'>
