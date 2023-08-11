@@ -9,10 +9,10 @@ export default function RepoPreview (props: { repository: Repository }): JSX.Ele
       <RepoThumbnail alt={repository.name + ' thumbnail'} thumbnail={repository.thumbnail} />
       <footer className='relative bottom-1/2'>
         <div className='flex justify-between px-2'>
-          <Link title='Deploy' href={repository.deploy} target='_blank' className='flex justify-center items-center gap-2 p-5 rounded-full font-bold bg-purple-500 group-hover:after:content-["Deploy"] transition-all duration-150'>
+          <Link title='Deploy' href={repository.deploy} target='_blank' className='flex justify-center items-center gap-2 p-5 rounded-full font-bold bg-purple-500 group-hover:after:animate-clircle-in-center group-hover:after:content-["Deploy"]'>
             {WINDOW_ICON}
           </Link>
-          <Link title='View code' href={repository.htmlUrl} target='_blank' className='flex justify-center items-center gap-2 p-5 rounded-full font-bold bg-gray-800 group-hover:before:content-["Source"] transition-all duration-150'>
+          <Link title='View code' href={repository.htmlUrl} target='_blank' className='flex justify-center items-center gap-2 p-5 rounded-full bg-gray-800  font-bold group-hover:before:animate-clircle-in-center group-hover:before:content-["Source"]'>
             {CODE_ICON}
           </Link>
         </div>
