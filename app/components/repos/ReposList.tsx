@@ -11,12 +11,17 @@ interface Props {
 export default async function ReposList (props: Props): Promise<JSX.Element> {
   const { icon, reposFetch, specialReposModifier, title, filter } = props
 
-  let repositories = await reposFetch.then((reposList: Repository[]) => filter != null ? filter(reposList) : reposList)
+  const finishReposFetch = async (): Promise<Repository[]> => await reposFetch.then(reposList =>
+    filter != null ? filter(reposList) : reposList)
 
-  if (specialReposModifier != null) {
-    repositories = repositories.map(repo =>
-      specialReposModifier[repo.name] != null ? Object.assign(repo, specialReposModifier[repo.name]) : repo)
-  }
+  const applyModifiers = (repos: Repository[]): Repository[] =>
+    specialReposModifier != null
+      ? repos.map(repo =>
+        specialReposModifier[repo.name] != null ? Object.assign(repo, specialReposModifier[repo.name]) : repo)
+      : repos
+
+  const repositories = applyModifiers(await finishReposFetch())
+
   return (
     <>
       <div className='flex items-center gap-2 text-left mb-10'>
