@@ -2,7 +2,7 @@ import Heading from '@/components/html-customs/Heading'
 import ReposList from '@/components/repos/ReposList'
 import { getRepositories } from '../services/repo-fetching'
 import { PROFESSIONAL_PROJECTS, PYTHON_PROJECTS } from '../constants/repos-filters'
-import { BRIEFCASE_ICON, DUMBBELL_ICON, PYTHON_ICON } from '../components/svg-icons'
+import { BRIEFCASE_ICON, DUMBBELL_ICON, PYTHON_ICON } from '../components/SVGIcon'
 import { SPECIAL_PROF_WORKS, SPECIAL_WEB_PROJECTS } from '../constants/special-repos-props'
 
 export default function ReposPage (): JSX.Element {
@@ -22,7 +22,7 @@ export default function ReposPage (): JSX.Element {
       </Heading>
       <main>
         <ReposList
-          icon={BRIEFCASE_ICON}
+          icon={BRIEFCASE_ICON(32, 32)}
           title='Professional works'
           fetchedRepos={repositories}
           filter={list => list.filter(repo => PROFESSIONAL_PROJECTS.includes(repo.name))}
@@ -31,7 +31,7 @@ export default function ReposPage (): JSX.Element {
       </main>
       <section>
         <ReposList
-          icon={DUMBBELL_ICON}
+          icon={DUMBBELL_ICON(32, 32)}
           title='Training projects' fetchedRepos={repositories}
           filter={list => list.filter(repo => !PROFESSIONAL_PROJECTS.includes(repo.name) &&
           !PYTHON_PROJECTS.includes(repo.name))}
@@ -43,7 +43,7 @@ export default function ReposPage (): JSX.Element {
       </Heading>
       <section>
         <ReposList
-          icon={PYTHON_ICON}
+          icon={PYTHON_ICON(32, 32)}
           title='Python projects' fetchedRepos={repositories}
           filter={list => list.filter(repo =>
             PYTHON_PROJECTS.includes(repo.name))}

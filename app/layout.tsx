@@ -1,5 +1,5 @@
 import './global.css'
-import { GITHUB_ICON, INSTAGRAM_ICON, LINKEDIN_ICON } from './components/svg-icons'
+import { GITHUB_ICON, INSTAGRAM_ICON, LINKEDIN_ICON } from './components/SVGIcon'
 import Link from 'next/link'
 import Heading from './components/html-customs/Heading'
 export const metadata = {
@@ -28,17 +28,17 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
             <ul className='flex gap-4'>
               <li className=''>
                 <Link className={hoverHighlight} href='https://github.com/lftdev' target='_blank'>
-                  {GITHUB_ICON('GitHub account')}
+                  {GITHUB_ICON(16, 16, 'GitHub account')}
                 </Link>
               </li>
               <li>
                 <Link className={hoverHighlight} href='https://linkedin.com/in/frontdev-lucastorres' target='_blank'>
-                  {LINKEDIN_ICON}
+                  {LINKEDIN_ICON(16, 16, 'LinkedIn account')}
                 </Link>
               </li>
               <li>
                 <Link className={hoverHighlight} href='https://www.instagram.com/lucastorres.29' target='_blank'>
-                  {INSTAGRAM_ICON}
+                  {INSTAGRAM_ICON(16, 16, 'Instagram account')}
                 </Link>
               </li>
             </ul>

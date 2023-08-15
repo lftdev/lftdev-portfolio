@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { useState } from 'react'
-import { GITHUB_ICON } from '../svg-icons'
+import { GITHUB_ICON } from '../SVGIcon'
 interface Props {
   alt: string
   thumbnail: string
@@ -22,7 +22,7 @@ export default function RepoThumb (props: Props): JSX.Element {
         />)}
       {fallback && (
         <div className='flex justify-center items-center'>
-          {GITHUB_ICON(alt, 350, 180)}
+          {GITHUB_ICON(350, 180, alt)}
         </div>
       )}
     </>
