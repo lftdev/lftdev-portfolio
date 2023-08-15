@@ -3,36 +3,20 @@ import RepoPreview from './RepoPreview'
 import Repository from '@/app/classes/Repository'
 interface Props {
   icon: React.ReactNode
-  fetchedRepos: Promise<Repository[]>
+  reposFetch: Promise<Repository[]>
   specialReposModifier?: { [key: string]: { [key: string]: string } }
   title: string
   filter?: (list: Repository[]) => Repository[]
 }
 export default async function ReposList (props: Props): Promise<JSX.Element> {
-  const { icon, fetchedRepos, specialReposModifier, title, filter } = props
-  let repositories
-  if (filter != null) repositories = filter(...(await Promise.all([fetchedRepos])))
-  else [repositories] = await Promise.all([fetchedRepos])
+  const { icon, reposFetch, specialReposModifier, title, filter } = props
 
-  function modifySpecialRepos (list: Repository[], specialReposModifier: { [key: string]: { [key: string]: string } }): Repository[] {
-    const keys = Object.keys(specialReposModifier)
-    const modifiedRepos = list
-      .filter(repo => keys.includes(repo.name))
-      .map(repo => {
-        Object.keys(specialReposModifier[repo.name]).forEach(key => {
-          repo[key] = specialReposModifier[repo.name][key]
-        })
-        return repo
-      })
-    return list.map(repo => {
-      modifiedRepos.forEach(mod => {
-        if (repo.name === mod.name) repo = mod
-      })
-      return repo
-    })
+  let repositories = await reposFetch.then((reposList: Repository[]) => filter != null ? filter(reposList) : reposList)
+
+  if (specialReposModifier != null) {
+    repositories = repositories.map(repo =>
+      specialReposModifier[repo.name] != null ? Object.assign(repo, specialReposModifier[repo.name]) : repo)
   }
-
-  if (specialReposModifier != null) repositories = modifySpecialRepos(repositories, specialReposModifier)
   return (
     <>
       <div className='flex items-center gap-2 text-left mb-10'>

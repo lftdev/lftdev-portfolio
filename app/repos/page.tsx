@@ -24,7 +24,7 @@ export default function ReposPage (): JSX.Element {
         <ReposList
           icon={BRIEFCASE_ICON(32, 32)}
           title='Professional works'
-          fetchedRepos={repositories}
+          reposFetch={repositories}
           filter={list => list.filter(repo => PROFESSIONAL_PROJECTS.includes(repo.name))}
           specialReposModifier={SPECIAL_PROF_WORKS}
         />
@@ -32,7 +32,7 @@ export default function ReposPage (): JSX.Element {
       <section>
         <ReposList
           icon={DUMBBELL_ICON(32, 32)}
-          title='Training projects' fetchedRepos={repositories}
+          title='Training projects' reposFetch={repositories}
           filter={list => list.filter(repo => !PROFESSIONAL_PROJECTS.includes(repo.name) &&
           !PYTHON_PROJECTS.includes(repo.name))}
           specialReposModifier={SPECIAL_WEB_PROJECTS}
@@ -44,7 +44,7 @@ export default function ReposPage (): JSX.Element {
       <section>
         <ReposList
           icon={PYTHON_ICON(32, 32)}
-          title='Python projects' fetchedRepos={repositories}
+          title='Python projects' reposFetch={repositories}
           filter={list => list.filter(repo =>
             PYTHON_PROJECTS.includes(repo.name))}
         />
