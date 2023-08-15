@@ -4,7 +4,7 @@ export default function HomePage (): JSX.Element {
   // Redundant role used for paragraph element was included as it was not being detected by tests.
   const radiance = 'before:rounded-full before:animate-pulse before:[box-shadow:0px_0px_200px_100px_rgba(240,129,181,1)] before:-z-50'
   return (
-    <div className='flex flex-col justify-center h-full px-5 pt-[72px]'>
+    <div className='flex flex-col justify-center max-w-6xl h-full px-5 pt-[72px]'>
       <main className='p-5'>
         <div className='grid gap-2'>
           <Heading level={2} className='text-pink-500'>

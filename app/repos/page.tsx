@@ -8,7 +8,7 @@ import { SPECIAL_PROF_WORKS, SPECIAL_WEB_PROJECTS } from '../constants/special-r
 export default function ReposPage (): JSX.Element {
   const repositories = getRepositories()
   return (
-    <div className='flex flex-col gap-6 pt-[92px] px-5'>
+    <div className=''>
       <div className='flex flex-col gap-5'>
         <Heading level={1}>
           Take a look at my <span className='text-purple-600'>repositories</span>

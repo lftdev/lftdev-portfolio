@@ -25,7 +25,7 @@ export default async function ReposList (props: Props): Promise<JSX.Element> {
           {title}
         </Heading>
       </div>
-      <div className='grid place-items-center gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
+      <div className='grid place-items-center gap-5 sm:grid-cols-2 lg:grid-cols-3'>
         {repositories.map((repo, index) => <RepoPreview key={index} repository={repo} />)}
       </div>
     </>
