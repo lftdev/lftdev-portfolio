@@ -1,5 +1,5 @@
 import './global.css'
-import { GITHUB_ICON, INSTAGRAM_ICON, LINKEDIN_ICON } from './components/SVGIcon'
+import { GITHUB_ICON, LINKEDIN_ICON } from './components/SVGIcon'
 import Link from 'next/link'
 import Heading from './components/html-customs/Heading'
 export const metadata = {
@@ -9,7 +9,6 @@ export const metadata = {
 
 export default function RootLayout ({ children }: { children: React.ReactNode }): JSX.Element {
   const hoverHighlight = 'hover:text-purple-600'
-  const warning = 'This portfolio is currently under development. Some features may be limited.'
   return (
     <html lang='en'>
       <body>
@@ -36,20 +35,10 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
                   {LINKEDIN_ICON(16, 16, 'LinkedIn account')}
                 </Link>
               </li>
-              <li>
-                <Link className={hoverHighlight} href='https://www.instagram.com/lucastorres.29' target='_blank'>
-                  {INSTAGRAM_ICON(16, 16, 'Instagram account')}
-                </Link>
-              </li>
             </ul>
           </nav>
         </header>
         {children}
-        <footer>
-          <p className='text-center font-bold'>
-            {warning}
-          </p>
-        </footer>
       </body>
     </html>
   )
