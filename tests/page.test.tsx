@@ -17,12 +17,6 @@ describe('HomePage', () => {
     const h1 = screen.getByRole('heading', { level: 1 })
     expect(h1.innerText).toBe('My name is Lucas and I\'m Frontend Developer.')
   })
-  it('should display a paragraph;', () => {
-    render(<HomePage/>)
-    const p = screen.getByRole('paragraph')
-    console.log(p.innerText)
-    expect(p.innerText).toBe('But, I know, you are here to see the proof of it so...')
-  })
   it('should display a call to action link;', () => {
     render(<HomePage/>)
     const link = screen.getByRole('link')

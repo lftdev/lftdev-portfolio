@@ -15,9 +15,6 @@ export default function HomePage (): JSX.Element {
           </Heading>
         </div>
         <div className={`grid place-items-center h-56 ${radiance}`}>
-          <p className='text-lg' role='paragraph'>
-            But, I know, you are here to see the proof of it so...
-          </p>
           <Link className='p-2 rounded-md bg-purple-600 font-bold' href='./repos'>
             Let's see my works!
           </Link>
