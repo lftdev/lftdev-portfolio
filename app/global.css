@@ -4,9 +4,6 @@
 html, body {
   height: 100%;
 }
-:root {
-  @apply bg-black text-white;
-}
 body:nth-child(2) {
   @apply flex flex-col items-center gap-6 pt-[92px] px-5;
 }
