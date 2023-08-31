@@ -14,7 +14,7 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
     <html lang='en'>
       <body>
         <ThemeRegistry options={{ key: 'mui' }} themeMode='dark'>
-          <header className='fixed top-0 flex justify-around items-center w-full p-5 z-50'>
+          <header className='fixed top-0 flex justify-around items-center w-full p-5 z-50 bg-inherit'>
             <span>
               <Link href='/'>
                 <Heading level={4} className='font-bold'>
@@ -28,12 +28,12 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
             <nav>
               <ul className='flex gap-4'>
                 <li className=''>
-                  <Link className={hoverHighlight} href='https://github.com/lftdev' target='_blank'>
+                  <Link className={hoverHighlight} href='https://github.com/lftdev' target='_blank' rel='noopener'>
                     {GITHUB_ICON(16, 16, 'GitHub account')}
                   </Link>
                 </li>
                 <li>
-                  <Link className={hoverHighlight} href='https://linkedin.com/in/frontdev-lucastorres' target='_blank'>
+                  <Link className={hoverHighlight} href='https://linkedin.com/in/frontdev-lucastorres' target='_blank' rel='noopener'>
                     {LINKEDIN_ICON(16, 16, 'LinkedIn account')}
                   </Link>
                 </li>
