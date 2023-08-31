@@ -4,12 +4,15 @@ import Link from 'next/link'
 import Heading from './components/html-customs/Heading'
 import ThemeRegistry from './components/ThemeRegistry'
 export const metadata = {
-  title: 'Portfolio | Lucas Franco Torres',
+  title: 'Lucas Franco Torres',
   description: 'Frontend Web Developer | Next.js, React, tailwindcss and TDD (Test Driven Development)'
 }
 
 export default function RootLayout ({ children }: { children: React.ReactNode }): JSX.Element {
-  const hoverHighlight = 'hover:text-purple-600'
+  const socialNavItems = [
+    { link: 'https://github.com/lftdev', icon: GITHUB_ICON(16, 16, 'GitHub account') },
+    { link: 'https://linkedin.com/in/frontdev-lucastorres', icon: LINKEDIN_ICON(16, 16, 'LinkedIn account') }
+  ]
   return (
     <html lang='en'>
       <body>
@@ -27,16 +30,12 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
             </span>
             <nav>
               <ul className='flex gap-4'>
-                <li className=''>
-                  <Link className={hoverHighlight} href='https://github.com/lftdev' target='_blank' rel='noopener'>
-                    {GITHUB_ICON(16, 16, 'GitHub account')}
-                  </Link>
-                </li>
-                <li>
-                  <Link className={hoverHighlight} href='https://linkedin.com/in/frontdev-lucastorres' target='_blank' rel='noopener'>
-                    {LINKEDIN_ICON(16, 16, 'LinkedIn account')}
-                  </Link>
-                </li>
+                {socialNavItems.map((socialNavItem, index) => (
+                  <li key={index}>
+                    <Link className='hover:text-purple-600' href={socialNavItem.link} target='_blank' rel='noopener'>
+                      {socialNavItem.icon}
+                    </Link>
+                  </li>))}
               </ul>
             </nav>
           </header>
