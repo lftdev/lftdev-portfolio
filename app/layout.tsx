@@ -4,8 +4,8 @@ import Link from 'next/link'
 import Heading from './components/html-customs/Heading'
 import ThemeRegistry from './components/ThemeRegistry'
 export const metadata = {
-  title: 'Lucas Franco Torres',
-  description: 'Frontend Web Developer | Next.js, React, tailwindcss and TDD (Test Driven Development)'
+  title: 'Portfolio web | Lucas Franco Torres',
+  description: 'Frontend Web Developer | Next.js, React, tailwindcss MUI (MaterialUI) and TDD (Test Driven Development)'
 }
 
 export default function RootLayout ({ children }: { children: React.ReactNode }): JSX.Element {

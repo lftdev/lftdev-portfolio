@@ -1,5 +1,6 @@
 import { Button } from '@mui/material'
 import Heading from './components/html-customs/Heading'
+import Link from 'next/link'
 export default function HomePage (): JSX.Element {
   // Redundant role used for paragraph element was included as it was not being detected by tests.
   const radiance = 'before:rounded-full before:animate-pulse before:[box-shadow:0px_0px_200px_100px_rgba(240,129,181,1)]'
@@ -15,7 +16,7 @@ export default function HomePage (): JSX.Element {
           </Heading>
         </div>
         <div className={`grid place-items-center h-56 ${radiance}`}>
-          <Button href='./repos' variant='contained'>
+          <Button href='./repos' variant='contained' component={Link}>
             Let's see my works!
           </Button>
         </div>
