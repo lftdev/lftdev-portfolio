@@ -8,7 +8,7 @@ export const SPECIAL_PROF_WORKS = {
   'lftdev-portfolio': {
     deploy: 'https://lftdev-portfolio-lftdev.vercel.app/'
   },
-  'masspow': {
+  masspow: {
     deploy: 'https://masspow.vercel.app/'
   }
 }
