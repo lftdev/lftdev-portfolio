@@ -7,5 +7,8 @@ export const SPECIAL_WEB_PROJECTS = {
 export const SPECIAL_PROF_WORKS = {
   'lftdev-portfolio': {
     deploy: 'https://lftdev-portfolio-lftdev.vercel.app/'
+  },
+  'masspow': {
+    deploy: 'https://masspow.vercel.app/'
   }
 }
