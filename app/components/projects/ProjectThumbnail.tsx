@@ -6,7 +6,7 @@ interface Props {
   alt: string
   thumbnail: string
 }
-export default function RepoThumb (props: Props): JSX.Element {
+export default function ProjectThumbnail (props: Props): JSX.Element {
   const { alt, thumbnail } = props
   const [fallback, setFallback] = useState(false)
   return (

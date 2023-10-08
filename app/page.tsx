@@ -15,7 +15,7 @@ export default function HomePage (): JSX.Element {
           </Heading>
         </div>
         <div className={`grid place-items-center h-56 ${radiance}`}>
-          <Button href='./repos' variant='contained' component={Link}>
+          <Button href='./projects' variant='contained' component={Link}>
             Let's see my works!
           </Button>
         </div>
